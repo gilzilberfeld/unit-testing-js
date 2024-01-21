@@ -1,18 +1,14 @@
 export default class CreditCard {
+  expirationDate: Date;
 
-  expirationDate : Date;
-
-  constructor(  expirationDate : Date) { 
-    this.expirationDate =  expirationDate;
+  constructor(expirationDate: Date) {
+    this.expirationDate = expirationDate;
   }
 
-  isExpired() : boolean{
-		const today = new Date()
+  isExpired(): boolean {
+    const today = new Date();
 
-		if (today < this.expirationDate )
-			return true;
-		else
-			return false;
-	}
-
+    if (today < this.expirationDate) return true;
+    else return false;
+  }
 }
