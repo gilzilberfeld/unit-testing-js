@@ -5,7 +5,7 @@ import { Driver } from "../driver";
 
 jest.mock("../car");
 
-describe("Driver with jest mocks", () => {
+describe("Driver with jest module mock", () => {
   let driver: Driver;
   let mockCar: Car;
 
