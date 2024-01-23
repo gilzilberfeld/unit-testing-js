@@ -1,5 +1,5 @@
 import { ACMode, AirCondition } from './aircondition';
-import { Car } from './car.';
+import { Car } from './car';
 
 export class Driver {
 

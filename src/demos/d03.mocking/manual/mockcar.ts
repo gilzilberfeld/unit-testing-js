@@ -1,5 +1,5 @@
 import { Observable, of } from "rxjs";
-import { Car } from "./car.";
+import { Car } from "../car";
 
 
 export class MockCar extends Car {

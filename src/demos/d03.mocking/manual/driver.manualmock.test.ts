@@ -1,7 +1,7 @@
 import { of } from 'rxjs';
 import { MockCar } from './mockcar';
-import { Car } from './car.';
-import { Driver  } from './driver';
+import { Car } from '../car';
+import { Driver  } from '../driver';
 
 describe('Driver with manual mock', () => {
   let driver: Driver;
