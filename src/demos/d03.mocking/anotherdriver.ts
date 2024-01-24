@@ -11,8 +11,12 @@ export class AnotherDriver {
     getCar() {
         return this.car;
     }
-    
+
 	canDrive(): boolean {
 		return !this.car.isRunning();
 	}
+
+    isCarBlack(): boolean {
+        return AnotherCar.modelIsBlack();
+    }
 }
