@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export const POST = async (req: Request) => {
-  const { theNumber } = await req.json();
-  const result = calculate(theNumber);
-  return NextResponse.json({'result' : result}, { status: 200 });
+export const POST = async (req: NextRequest) => {
+  const reqData = await req.json();
+  const theResult = calculate(reqData.theNumber);
+  return NextResponse.json({ result: theResult }, { status: 200 });
 };
 
 function calculate(theNumber: number): number {
