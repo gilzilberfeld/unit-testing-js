@@ -1,5 +1,20 @@
-api tests
-api exercises
+Slides:
+     Need slides for manual, auto manual, partial
+    In Mocking, explaing better, less vague on the external display
+
+Exercises:
+    Mocking ->      Partial
+                    Error handling exercise
+                    Stream exercise
+
+    API exercises -> define vs Calculator
+
+solutions
+    Parameterized 2
+    Mocking
+    Refactoring
+    API
+----
 TDD
 solutions
 slides change exercises
