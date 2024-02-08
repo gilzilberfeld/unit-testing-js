@@ -1,6 +1,6 @@
 import CalculatorDisplay from "./calculatordisplay";
 
-// 3. Refactor resrs
+// 3. Refactor tests
 describe("Refactored tests", () => {
   let calc: CalculatorDisplay;
 

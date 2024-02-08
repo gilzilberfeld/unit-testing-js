@@ -1,6 +1,6 @@
 import { ExternalDisplay } from "./externaldisplay"
 
-export class MockDisplay implements ExternalDisplay {
+export class MockDisplay extends ExternalDisplay {
     theIsOn : boolean = false
     theText : string = ""
 
