@@ -1,4 +1,4 @@
 export interface ExternalDisplay {
-  show(text: string) : void;
+  show(text: string): void;
   isOn(): boolean;
 }

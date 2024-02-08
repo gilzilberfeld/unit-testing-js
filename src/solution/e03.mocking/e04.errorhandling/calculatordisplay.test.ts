@@ -3,7 +3,7 @@
 import CalculatorDisplay from "./calculatordisplay";
 import { ExternalDisplay } from "./externaldisplay";
 
-describe("Jest fn", () => {
+describe("Error handling", () => {
   let display: ExternalDisplay;
 
   beforeEach(() => {
