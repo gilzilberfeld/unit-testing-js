@@ -10,20 +10,12 @@ describe('Parameterized tests', ()=>{
          calc = new CalculatorDisplay()
     })
 
-    it('at start displays 0', ()=>{
-        expect(calc.getDisplay()).toBe('0')
-    })
+    test.each(loadFromFile())("after pressing %p should show %p", (input, expected) => {
+        pressSequence(input);
+        shouldDisplay(expected);
+      });
 
-    it('pressing 1 displays 1', ()=>{
-        calc.press('1')
-        shouldDisplay('1')
-    })
-
-    it('pressing 1,2 displays 12', ()=>{
-        pressSequence('12')
-        expect(calc.getDisplay()).toBe('12')
-    })
-    
+      
     function pressSequence( sequence : string) {
         for (let i = 0; i < sequence.length; i++) {
             calc.press(sequence.charAt(i));
@@ -33,3 +25,15 @@ describe('Parameterized tests', ()=>{
         expect(calc.getDisplay()).toBe(value)
     }
 })
+
+function loadFromFile(): readonly [string, string][] {
+    // npm i csv
+    // node-csv packagge, find example
+    // build array, return it
+
+    return [
+        ["1", "1"],
+        ["12", "12"],
+        ["1+2", "2"],
+    ]
+}

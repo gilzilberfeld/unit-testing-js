@@ -16,7 +16,7 @@ describe("Parameterized tests", () => {
   test.each([
     ["1", "1"],
     ["12", "12"],
-    ["12+", "12"],
+    ["1+2", "2"],
   ])("after pressing %p should show %p", (input, expected) => {
     pressSequence(input);
     shouldDisplay(expected);

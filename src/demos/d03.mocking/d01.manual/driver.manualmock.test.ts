@@ -16,7 +16,7 @@ describe('Driver with manual mock', () => {
     expect(driver.canDrive()).toBeFalsy();
   });
 
-  it('should go to garage when temperature is high with mock observables', () => {
+  it('should go to garage when temperature is high - with mock observables', () => {
     expect(driver.shouldGoToGarage()).toBe(false);
     driver.checkTemp();
     // all values were streamed

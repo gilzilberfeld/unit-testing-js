@@ -23,6 +23,14 @@ describe("Driver with jest module mock", () => {
     expect(carMock).toEqual(mockCar);
   });
 
+  it("change the behavior of a method", () => {
+    const carMock = Car.mock.instances[0];
+    jest.spyOn(carMock, "isRunning").mockImplementation(() => true);
+
+    const result = driver.canDrive();
+    expect(result).toBeFalsy();
+  });
+
   it("method was called", () => {
     driver.canDrive();
     const carMock = Car.mock.instances[0];
@@ -31,13 +39,6 @@ describe("Driver with jest module mock", () => {
     expect(mockIsRunning.mock.calls.length).toBe(1);
   });
 
-  it("change the behavior of a method", () => {
-    const carMock = Car.mock.instances[0];
-    jest.spyOn(carMock, "isRunning").mockImplementation(() => true);
-
-    const result = driver.canDrive();
-    expect(result).toBeFalsy();
-  });
 
   it("can even check the arguments", () => {
     const carMock = Car.mock.instances[0];
