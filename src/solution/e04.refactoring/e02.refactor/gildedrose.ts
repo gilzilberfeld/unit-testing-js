@@ -15,45 +15,47 @@ export class GildedRose {
   }
 
   private updateItem(item: Item) {
-    if (isElixirOrVest(item)) {
-      if (item.quality > 0) {
-        this.decreaseQuality(item);
-      }
-      this.decreaseSellIn(item);
-      if (item.quality > 0 && item.sellIn < 0) {
-        this.decreaseQuality(item);
-      }
-    }
-    if (isAgedBrie(item)) {
-      if (item.quality < 50) {
-        this.increaseQuality(item);
-      }
-      this.decreaseSellIn(item);
-      if (item.sellIn < 0 && item.quality < 50) {
-        this.increaseQuality(item);
-      }
-    }
-    if (isBackstage(item)) {
-      if (item.quality < 50) {
-        this.increaseQuality(item);
-        if (item.quality < 50) {
-          if (item.sellIn < 11) {
+    switch (item.name) {
+      case "Elixir of the Mongoose":
+        case "+5 Dexterity Vest":
+          if (item.quality > 0) {
+            this.decreaseQuality(item);
+          }
+          this.decreaseSellIn(item);
+          if (item.quality > 0 && item.sellIn < 0) {
+            this.decreaseQuality(item);
+          }
+          break;
+        case "Aged Brie":
+          if (item.quality < 50) {
             this.increaseQuality(item);
           }
-          if (item.sellIn < 6) {
+          this.decreaseSellIn(item);
+          if (item.sellIn < 0 && item.quality < 50) {
             this.increaseQuality(item);
           }
-        }
-      }
-      this.decreaseSellIn(item);
-      if (item.sellIn < 0) {
-        item.quality = 0;
-      } 
-    }
-    if (isSulfuras(item)) {
-      if (item.quality < 50) {
-        this.increaseQuality(item);
-      }
+          break;
+        case "Backstage passes to a TAFKAL80ETC concert":
+          if (item.quality < 50) {
+            this.increaseQuality(item);
+            if (item.quality < 50) {
+              if (item.sellIn < 11) {
+                this.increaseQuality(item);
+              }
+              if (item.sellIn < 6) {
+                this.increaseQuality(item);
+              }
+            }
+          }
+          this.decreaseSellIn(item);
+          if (item.sellIn < 0) {
+            item.quality = 0;
+          }
+          break;
+          case "Sulfuras, Hand of Ragnaros":
+            if (item.quality < 50) {
+              this.increaseQuality(item);
+            }                  
     }
   }
 
@@ -70,18 +72,7 @@ export class GildedRose {
     item.quality = item.quality - 1;
   }
 }
-function isElixirOrVest(item: Item) {
-  return !isAgedBrie(item) && !isBackstage(item) && !isSulfuras(item);
-}
 
-function isSulfuras(item: Item) {
-  return item.name === "Sulfuras, Hand of Ragnaros";
-}
 
-function isBackstage(item: Item) {
-  return item.name === "Backstage passes to a TAFKAL80ETC concert";
-}
 
-function isAgedBrie(item: Item) {
-  return item.name === "Aged Brie";
-}
+
