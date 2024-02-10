@@ -41,15 +41,4 @@ export class GildedRose {
     }
   }
 
-  private decreaseSellIn(item: Item) {
-    item.sellIn = item.sellIn - 1;
-  }
-
-  private increaseQuality(item: Item) {
-    item.quality = item.quality + 1;
-  }
-
-  private decreaseQuality(item: Item) {
-    item.quality = item.quality - 1;
-  }
 }
