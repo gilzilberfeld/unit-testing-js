@@ -21,6 +21,8 @@ export class GildedRose {
   private updateItem(item: Item) {
     const storedItem = ItemFactory.getItemByName(item);
     storedItem?.update();
-    this.notifier?.notifyTownCrier(storedItem?.message);
+    let notification = "";
+    if (storedItem?.message != null) notification = storedItem.message;
+    this.notifier?.notifyTownCrier(notification);
   }
 }

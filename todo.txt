@@ -3,10 +3,6 @@ Slides:
     In Mocking, explaing better, less vague on the external display
 
 Exercises:
-    Mocking ->      Partial
-                    Error handling exercise
-                    Stream exercise
-
     API exercises -> define vs Calculator
 
 solutions
