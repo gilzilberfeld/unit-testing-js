@@ -1,11 +1,14 @@
 import { Item } from "./item";
 import { ItemFactory } from "./itemfactory";
+import { NotifyService } from "./notify";
 
 export class GildedRose {
   items: Array<Item>;
+  notifier: NotifyService;
 
-  constructor(items = [] as Array<Item>) {
+  constructor(items = [] as Array<Item>, notifier: NotifyService) {
     this.items = items;
+    this.notifier = notifier;
   }
 
   updateQuality() {
@@ -16,8 +19,8 @@ export class GildedRose {
   }
 
   private updateItem(item: Item) {
-    const storedItem = ItemFactory.getItemByName(item)
-    storedItem?.update()
+    const storedItem = ItemFactory.getItemByName(item);
+    storedItem?.update();
+    this.notifier?.notifyTownCrier(storedItem?.message);
   }
-
 }

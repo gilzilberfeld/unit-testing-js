@@ -1,10 +1,5 @@
-import { AgedBrie } from "./agedbrie";
-import { Backstage } from "./backstage";
-import { ElixirOrVest } from "./elixirorvest";
 import { Item } from "./item";
 import { ItemFactory } from "./itemfactory";
-import { StoredItem } from "./storeditem";
-import { Sulfuras } from "./sulfuras";
 
 export class GildedRose {
   items: Array<Item>;
