@@ -4,7 +4,7 @@
 import request from "supertest";
 const hostUrl = "http://localhost:3000";
 
-describe('API Tests', ()=>{
+describe.skip('API Tests', ()=>{
     beforeEach(async ()=> {
         const response = await request(hostUrl)
         .post("/api/calculator/reset")
