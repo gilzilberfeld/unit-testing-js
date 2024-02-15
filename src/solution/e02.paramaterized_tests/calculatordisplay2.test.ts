@@ -1,5 +1,6 @@
 //  2. Read from CSV file
 
+import fs from 'fs'
 import CalculatorDisplay from "./calculatordisplay"
 
     
@@ -26,14 +27,15 @@ describe('Parameterized tests', ()=>{
     }
 })
 
-function loadFromFile(): readonly [string, string][] {
-    // npm i csv
-    // node-csv packagge, find example
-    // build array, return it
+function loadFromFile(): [string, string][] {
 
-    return [
-        ["1", "1"],
-        ["12", "12"],
-        ["1+2", "2"],
-    ]
+    const rows = fs.readFileSync('./src/solution/e02.paramaterized_tests/data.csv', {encoding : 'utf-8'})
+    .split('\r\n')
+    .map((row: string): string[] => {
+        return row.split(',')
+    })
+    
+    const retyped_rows : [string,string][] = 
+        rows.map(([input,expected]) => [input,expected])
+    return retyped_rows;
 }

@@ -1,15 +1,3 @@
-Slides:
-     Need slides for manual, auto manual, partial
-    In Mocking, explaing better, less vague on the external display
-
-Exercises:
-    API exercises -> define vs Calculator
-
-solutions
-    Parameterized 2
-    Mocking
-    Refactoring
-    API
 ----
 TDD
 solutions
