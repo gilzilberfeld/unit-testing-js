@@ -1,4 +1,3 @@
-import exp from "constants";
 import Factorial from "./factorial";
 
 describe("Factorial data-driven] ", () => {

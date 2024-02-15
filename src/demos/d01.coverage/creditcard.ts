@@ -8,7 +8,9 @@ export default class CreditCard {
   isExpired(): boolean {
     const today = new Date();
 
-    if (today < this.expirationDate) return true;
-    else return false;
+    if (today < this.expirationDate) 
+      return true;
+    else 
+      return false;
   }
 }

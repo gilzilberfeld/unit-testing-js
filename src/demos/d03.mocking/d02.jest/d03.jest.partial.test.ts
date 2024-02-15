@@ -1,4 +1,3 @@
-import { exportTraceState } from "next/dist/trace";
 import { Car } from "../car";
 import { Driver } from "../driver";
 

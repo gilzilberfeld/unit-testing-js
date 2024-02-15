@@ -1,4 +1,3 @@
-import exp from "constants";
 import { ACMode } from "../aircondition";
 import { Car } from "../car";
 import { Driver } from "../driver";
@@ -52,6 +51,6 @@ describe("Driver with jest module mock", () => {
     // OR
     const theArg = carMock.setAC.mock.calls[0][0];
     var theMode = theArg['mode'];
-    expect(theMode).toEqual(ACMode.On);
+    expect(theMode).toBe(ACMode.On);
   });
 });
