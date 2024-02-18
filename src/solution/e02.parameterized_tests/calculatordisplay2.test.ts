@@ -29,7 +29,7 @@ describe('Parameterized tests', ()=>{
 
 function loadFromFile(): [string, string][] {
 
-    const rows = fs.readFileSync('./src/solution/e02.paramaterized_tests/data.csv', {encoding : 'utf-8'})
+    const rows = fs.readFileSync('./src/solution/e02.parameterized_tests/data.csv', {encoding : 'utf-8'})
     .split('\r\n')
     .map((row: string): string[] => {
         return row.split(',')

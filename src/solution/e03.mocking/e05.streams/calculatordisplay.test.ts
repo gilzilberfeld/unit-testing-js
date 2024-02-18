@@ -14,8 +14,10 @@ describe("Streams", () => {
     const cd = new CalculatorDisplay();
     PlasmaScreen.getStatus = jest.fn(() => of(DisplayStatus.Off));
     cd.press("1");
+    expect(PlasmaScreen.show).not.toHaveBeenCalled()
     PlasmaScreen.getStatus = jest.fn(() => of(DisplayStatus.Off));
     cd.press("2");
+    expect(PlasmaScreen.show).not.toHaveBeenCalled()
     PlasmaScreen.getStatus = jest.fn(() => of( DisplayStatus.On));
     cd.press("3");
     expect(PlasmaScreen.show).toHaveBeenCalledTimes(1)

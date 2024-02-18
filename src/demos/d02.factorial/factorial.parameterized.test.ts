@@ -20,7 +20,7 @@ describe("Factorial data-driven] ", () => {
   ${1}    | ${1}
   ${3}    | ${6}
   ${6}    | ${720}
-  `("should calculate for $input with expected $expected ", ({input, expected}) => {
+  `("should calculate for $input with the expected $expected ", ({input, expected}) => {
     expect(fact.calculate(input)).toBe(expected);
   });
 });
